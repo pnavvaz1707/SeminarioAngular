@@ -1,0 +1,22 @@
+<form style="padding: 15px;" #form = "ngForm">
+  <div class="form-group">
+    <label for="nombreInput">Nombre: </label>
+    <input id="nombreInput" name="nombre" type="text" class="form-control" [(ngModel)]="model.nombre" required #nombre="ngModel"/>
+    <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">Campo obligatorio</div>
+  </div>
+  <div class="form-group">
+    <label for="apellidosInput">Apellidos: </label>
+    <input id="apellidosInput" type="text" class="form-control" [(ngModel)]="model.apellidos" required #apellidos="ngModel"/>
+  </div>
+  <div class="form-group">
+    <label for="emailInput">Email: </label>
+    <input id="emailInput" type="email" class="form-control" [(ngModel)]="model.email" required #email="ngModel"/>
+  </div>
+  <div class="form-group">
+    <label for="telInput">Teléfono: </label>
+    <input id="telInput" type="tel" class="form-control" [(ngModel)]="model.tel" required #tel="ngModel"/>
+  </div>
+  <div class="float-end" style="margin: 15px;">
+    <button type="send" class="btn btn-info btn-lg">Enviar</button>
+  </div>
+</form>
